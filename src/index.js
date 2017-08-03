@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
+import requireAuth from './components/require_authentication';
 
 import Header from './components/header';
 import Resources from './components/resources';
@@ -18,7 +19,8 @@ ReactDOM.render(
       <div>
         <Header />
         <Switch>
-          <Route path="/resources" component={Resources} />
+          {/* We need to wrap requireAuth (Our HoC) function to our component which is Resources */}
+          <Route path="/resources" component={requireAuth(Resources)} />
         </Switch>
       </div>
     </BrowserRouter>
