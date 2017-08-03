@@ -1,0 +1,2 @@
+1. If we want every instance of Resources to require authentication,
+   then we should put our requireAuth to the Resources component (similar to how we use the connect )
